@@ -18,7 +18,7 @@ docker run \
 --mount="type=bind,source=/var/run/dbus/system_bus_socket,target=/var/run/dbus/system_bus_socket" \
 --mount="type=bind,source=$(pwd)/udocker,target=/home/udocker" \
 --name="google-chrome-stable" \
-google-chrome-stable \
+alireaza/google-chrome-stable \
 --enable-logging=stderr \
 --high-dpi-support=1 \
 --force-device-scale-factor=.75
