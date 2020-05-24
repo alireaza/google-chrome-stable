@@ -1,5 +1,5 @@
 Build:
-docker build --build-arg https_proxy="http://172.17.0.1:9053" -t alireaza/google-chrome-stable .
+docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) --tag alireaza/google-chrome-stable .
 
 Run:
 docker run \
@@ -13,6 +13,7 @@ docker run \
 --mount="type=bind,source=${XDG_RUNTIME_DIR}/pulse/native,target=${XDG_RUNTIME_DIR}/pulse/native" \
 --env="TZ=$(cat /etc/timezone)" \
 --cap-add=SYS_ADMIN \
+--ipc host \
 --mount="type=bind,source=/dev/shm,target=/dev/shm" \
 --mount="type=bind,source=/etc/machine-id,target=/etc/machine-id" \
 --mount="type=bind,source=/var/run/dbus/system_bus_socket,target=/var/run/dbus/system_bus_socket" \
