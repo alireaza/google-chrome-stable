@@ -1,5 +1,5 @@
 Build:
-docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) --tag alireaza/google-chrome-stable .
+docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) --tag alireaza/google-chrome-stable:$(date -u +%Y%m%d) --tag alireaza/google-chrome-stable .
 
 Run:
 docker run \
