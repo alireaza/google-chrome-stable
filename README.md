@@ -1,8 +1,14 @@
-Build:
-docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) --tag alireaza/google-chrome-stable:$(date -u +%Y%m%d) --tag alireaza/google-chrome-stable .
+# Google Chrome
 
-Run:
-docker run \
+## Build
+Via GitHub repository
+```bash
+$ docker build --tag alireaza/google-chrome-stable:$(date -u +%Y%m%d) --tag alireaza/google-chrome-stable:latest https://github.com/alireaza/google-chrome-stable.git
+```
+
+## Run
+```bash
+$ docker run \
 --interactive \
 --tty \
 --rm \
@@ -23,3 +29,5 @@ alireaza/google-chrome-stable \
 --enable-logging=stderr \
 --high-dpi-support=1 \
 --force-device-scale-factor=.75
+```
+
